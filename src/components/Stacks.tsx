@@ -5,34 +5,39 @@ import { Lucide } from "./icons";
 // TODO : update stacks
 const stacks = [
   {
-    name: "🗺️ ZAP.",
-    category: "Live map of Dispensary sales.",
-    url: "https://zap.dispo.social",
+    name: "🗺️ IRL.TRAVEL",
+    category: "IRL.TRAVEL is the offial ATL5D social media.",
+    url: "https://irl.travel",
   },
-  {
-    name: "🤳 ZATV.",
-    category: "The ZA TikTok",
-    url: "https://zatv.dispo.social",
-  },
-  {
-    name: "🪴 PRODUCTS.",
-    category: "DISPO.SOCIAL dispensary products",
+    {
+    name: "🏦 W🅰️LLO",
+    category: "The official 🅰️TL5D $ATL loyalty rewards wallet that solves the problem of 60k unbanked ATL resisdents.",
     url: "https://products.dispo.social",
   },
   {
-    name: "🤖 STRAIN.",
-    category: "Ask AI about a strain",
-    url: "https://strain.weedw3w.com",
+    name: "🤳 TIKTOK",
+    category: "The magic happens on TikTok. Book Atlanta biz on @ATL5D, watch the results before you pay.",
+    url: "https://tiktok.com/@atl5d",
+  },
+    {
+    name: "🎮 RUN.",
+    category: "ATL infinite run game with local characters.",
+    url: "https://run.atl5d.com",
+  },
+    {
+    name: "🎤 MIC.",
+    category: "Earn Bitcoin zap tips for leaveing Voicemail style travel reviews.",
+    url: "https://mic.irl.travel",
   },
   {
-    name: "✍️ BLOG.",
-    category: "DISPO.SOCIAL Blogs",
-    url: "https://blog.weedw3w.com",
+    name: "🧭 MAP",
+    category: "ATL5D map coming soon.",
+    url: "https://products.dispo.social",
   },
   {
-    name: "🎮 NAME. GAME",
-    category: "Weed name guessing game",
-    url: "https://name.dispo.social",
+    name: "🤖 AI",
+    category: "ATL AI chat bot coming soon.",
+    url: "",
   },
 ];
 
