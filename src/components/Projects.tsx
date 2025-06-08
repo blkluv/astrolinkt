@@ -214,7 +214,7 @@ export default () => {
           ATL creators can apply to be featured and start earning $ATL tips.
         </p>
         <a
-          href="https://atl5d.com/creators"
+          href="https://t.me/atl5d"
           className="inline-block px-4 py-2 bg-[#A6192E] text-white rounded-full text-sm font-medium"
         >
           Apply as Creator
