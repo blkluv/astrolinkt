@@ -1,74 +1,208 @@
 import { IconButton } from "./ui";
 import { cn } from "./ui/utils";
 import { Lucide } from "./icons";
+import { FaEthereum } from "react-icons/fa";
 
-const projects = [
+// Tipping contract ABI (simplified)
+const tipContract = {
+  address: "0x...ATL5DTipContract",
+  abi: [
+    {
+      inputs: [
+        { name: "creator", type: "address" },
+        { name: "amount", type: "uint256" }
+      ],
+      name: "tipCreator",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function"
+    }
+  ]
+};
+
+const getRandomWallo = () => {
+  const adjectives = ["cool", "hype", "fresh", "sunny", "zesty"];
+  const nouns = ["peach", "vibes", "grind", "drop", "buzz"];
+  return `@${adjectives[Math.floor(Math.random() * adjectives.length)]}${nouns[Math.floor(Math.random() * nouns.length)]}`;
+};
+
+const creators = [
   {
-    title: "🛍️ The Joint",
-    description: <>Portland, ME W3W <a href="https://w3w.co/open.octagon.partial" target="_blank" rel="noopener noreferrer" className="text-primary-10 hover:text-primary-11 underline">🌱📍///open.octagon.partial</a></>,
-    icon: "🌞",
-    url: "https://thejoint.me",
+    category: "🍔 Foodies",
+    list: [
+      {
+        name: "👅 TongueTiedFoodie",
+        platform: "TikTok 🍜",
+        handle: "@tonguetiedfoodie",
+        url: "https://www.tiktok.com/@tonguetiedfoodie",
+        wallet: "0x...foodie1",
+        booking: "https://cal.com/tonguetied/atl5d"
+      },
+      {
+        name: "🍴 EatingWithErica",
+        platform: "TikTok 🧋",
+        handle: "@eatingwitherica",
+        url: "https://www.tiktok.com/@eatingwitherica",
+        wallet: "0x...erica2",
+        booking: "https://cal.com/eatingwitherica/atl5d"
+      }
+    ],
   },
   {
-    title: "🛍️ High Rollers Atlantic City Dispensary",
-    description: <>Atlantic City, NJ W3W <a href="https://what3words.com/film.client.darker" target="_blank" rel="noopener noreferrer" className="text-primary-10 hover:text-primary-11 underline">🌱📍///film.client.darker</a></>,
-    icon: "🌞",
-    url: "https://github.com/flamrdevs/astrovehnt",
-  },
-  {
-    title: "🛍️ PPP Dispensary",
-    description: <>Atlantic City, NJ W3W <a href="https://what3words.com/porch.descended.ties" target="_blank" rel="noopener noreferrer" className="text-primary-10 hover:text-primary-11 underline">🌱📍///porch.descended.ties</a></>,
-    icon: "🌞",
-    url: "https://github.com/flamrdevs/astrobuckt",
-  },
+    category: "💇 Hair Game",
+    list: [
+      {
+        name: "💁 Sabrina Molu",
+        platform: "Instagram 💕",
+        handle: "@sabrinamolu",
+        url: "https://www.instagram.com/sabrinamolu",
+        wallet: "0x...molu3",
+        booking: "https://cal.com/sabrinamolu/atl5d"
+      }
+    ],
+  }
 ];
 
 export default () => {
-  return (
-    <div>
-      <h2 className="font-medium text-xl mb-3">✅ PARTNERS</h2>
-      <ul className="grid grid-cols-1 gap-3 p-1">
-        {projects.map((project) => {
-          return (
-            <li
-              key={project.title}
-              className={cn(
-                "group",
-                "flex items-center justify-between px-4 py-3",
-                "bg-neutral-2 hover:bg-neutral-3",
-                "outline-none border border-neutral-4 hover:border-neutral-6 rounded-3xl",
-                "focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-neutral-7 focus-visible:ring-offset-neutral-1"
-              )}
-            >
-              <div className="flex flex-row items-stretch gap-5 pl-2">
-                <div className="flex items-center justify-center w-8 h-8 text-2xl">
-                  {project.icon}
-                </div>
+  const handleTip = async (creatorAddress: string, amount: number) => {
+    try {
+      // Connect to wallet first
+      const { ethereum } = window;
+      if (!ethereum) throw new Error("No wallet detected");
+      
+      // Call smart contract
+      await ethereum.request({
+        method: "eth_sendTransaction",
+        params: [{
+          to: tipContract.address,
+          from: userAddress,
+          data: tipContract.abi.encodeFunctionData("tipCreator", [creatorAddress, amount])
+        }]
+      });
+      
+      alert(`Sent ${amount} $ATL!`);
+    } catch (error) {
+      console.error("Tip failed:", error);
+    }
+  };
 
-                <div>
-                  <h3 className="transition duration-300 group-hover:translate-x-1 text-neutral-12 text-sm">{project.title}</h3>
-                  <div className="transition duration-300 group-hover:translate-x-px text-neutral-10 group-hover:text-neutral-11 text-xs">
-                    {project.description}
+  return (
+    <div className="max-w-2xl mx-auto">
+      <h2 className="font-medium text-2xl mb-4 flex items-center gap-2">
+        📍 ATL5D Creator Hub 
+        <span className="text-xs bg-[#A6192E] text-white px-2 py-1 rounded-full">Powered by WALLO</span>
+      </h2>
+      
+      <div className="mb-6 p-4 bg-neutral-2 rounded-xl border border-neutral-4">
+        <h3 className="font-semibold mb-2">🔥 Pro Tip</h3>
+        <p className="text-sm">
+          Tip creators in $ATL or book them for your next livestream. 
+          All payments settle instantly on Base Network.
+        </p>
+      </div>
+
+      {creators.map(({ category, list }) => (
+        <div key={category} className="mb-8">
+          <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+            {category} 
+            <span className="text-xs bg-neutral-4 text-neutral-11 px-2 py-0.5 rounded-full">
+              {list.length} creators
+            </span>
+          </h3>
+          
+          <ul className="grid grid-cols-1 gap-3">
+            {list.map((creator) => (
+              <li
+                key={creator.handle}
+                className={cn(
+                  "group flex flex-col p-4",
+                  "bg-neutral-2 hover:bg-neutral-3",
+                  "border border-neutral-4 hover:border-neutral-6 rounded-2xl",
+                  "transition-colors"
+                )}
+              >
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h4 className="font-medium flex items-center gap-1.5">
+                      {creator.name} 
+                      <span className="text-xs text-neutral-10">({creator.platform})</span>
+                    </h4>
+                    <p className="text-xs text-neutral-11 mt-1">
+                      {creator.handle} • 🏦 WALLO: <em>{getRandomWallo()}</em>
+                    </p>
+                  </div>
+                  
+                  <div className="flex gap-1">
+                    <IconButton
+                      as="a"
+                      href={creator.url}
+                      target="_blank"
+                      size="sm"
+                      aria-label={`View ${creator.name}`}
+                    >
+                      <Lucide.IconExternalLink className="size-3.5" />
+                    </IconButton>
                   </div>
                 </div>
-              </div>
-
-              <IconButton 
-                as="a" 
-                href={project.url} 
-                className="group/icon" 
-                target="_blank" 
-                aria-label={`Open ${project.title}`}
-              >
-                <Lucide.IconExternalLink
-                  aria-label={`Open ${project.title}`}
-                  className="transition text-neutral-10 group-hover:text-primary-11 group-focus-visible/icon:text-primary-11"
-                />
-              </IconButton>
-            </li>
-          );
-        })}
-      </ul>
+                
+                {/* Tipping & Booking Actions */}
+                <div className="mt-3 flex gap-2 flex-wrap">
+                  <button 
+                    onClick={() => handleTip(creator.wallet, 1000)}
+                    className={cn(
+                      "flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-full",
+                      "bg-[#A6192E]/10 hover:bg-[#A6192E]/20",
+                      "border border-[#A6192E]/20",
+                      "transition-colors"
+                    )}
+                  >
+                    <FaEthereum className="text-[#A6192E] size-3" />
+                    Tip $ATL
+                  </button>
+                  
+                  <a
+                    href={creator.booking}
+                    target="_blank"
+                    className={cn(
+                      "flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-full",
+                      "bg-neutral-4 hover:bg-neutral-5",
+                      "border border-neutral-6",
+                      "transition-colors"
+                    )}
+                  >
+                    📅 Book for Livestream
+                  </a>
+                  
+                  <button
+                    onClick={() => navigator.clipboard.writeText(creator.wallet)}
+                    className={cn(
+                      "px-2 py-1.5 text-xs rounded-full",
+                      "bg-neutral-3 hover:bg-neutral-4",
+                      "text-neutral-10 hover:text-neutral-11",
+                      "transition-colors"
+                    )}
+                  >
+                    Copy Wallet
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      
+      <div className="mt-8 p-4 bg-[#FFD700]/10 rounded-xl border border-[#FFD700]/20 text-center">
+        <h3 className="font-medium mb-2">Want to join this list?</h3>
+        <p className="text-sm mb-3">
+          ATL creators can apply to be featured and start earning $ATL tips.
+        </p>
+        <a
+          href="https://atl5d.com/creators"
+          className="inline-block px-4 py-2 bg-[#A6192E] text-white rounded-full text-sm font-medium"
+        >
+          Apply as Creator
+        </a>
+      </div>
     </div>
   );
 };

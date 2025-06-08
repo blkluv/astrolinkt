@@ -11,8 +11,8 @@ const stacks = [
   },
     {
     name: "🏦 W🅰️LLO",
-    category: "The official 🅰️TL5D $ATL loyalty rewards wallet that solves the problem of 60k unbanked ATL resisdents.",
-    url: "https://products.dispo.social",
+    category: "The official 🅰️TL5D $ATL loyalty rewards wallet",
+    url: "https://wallo.atl5d.com",
   },
   {
     name: "🤳 TIKTOK",
@@ -31,8 +31,8 @@ const stacks = [
   },
   {
     name: "🧭 MAP",
-    category: "ATL5D map coming soon.",
-    url: "https://products.dispo.social",
+    category: "ATL5D map of creators near you coming soon.",
+    url: "",
   },
   {
     name: "🤖 AI",

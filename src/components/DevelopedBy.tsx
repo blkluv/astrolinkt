@@ -6,13 +6,13 @@ const DevelopedBy = () => {
       <span>
         Made With 🫶 by{" "}
         <a
-          href="https://dispo.social"
+          href="https://atl5d.com"
           className="inline-block transition duration-300 hover:-translate-y-px outline-none hover:text-primary-10 focus-visible:text-primary-10"
           target="_blank"
           aria-label="Developer"
         >
           {" "}
-          DISPO.SOCIAL
+          ATL5D
         </a>
       </span>
     </div>
