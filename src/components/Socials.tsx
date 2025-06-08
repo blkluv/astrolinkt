@@ -2,22 +2,17 @@
 const socials = [
   {
     name: "TikTok",
-    href: "https://tiktok.com/@yourhandle",
+    href: "https://tiktok.com/@atl5d",
     icon: "🎵",
   },
   {
     name: "Instagram",
-    href: "https://instagram.com/yourhandle",
+    href: "https://instagram.com/atl5d",
     icon: "📸",
   },
   {
-    name: "Threads",
-    href: "https://threads.net/@yourhandle",
-    icon: "🧵",
-  },
-  {
     name: "Telegram",
-    href: "https://t.me/yourhandle",
+    href: "https://t.me/atl5d",
     icon: "📨",
   },
   {
