@@ -1,74 +1,121 @@
 import { IconButton } from "./ui";
 import { cn } from "./ui/utils";
 import { Lucide } from "./icons";
-import { FaEthereum } from "react-icons/fa";
+import { FaEthereum, FaInstagram, FaTiktok, FaYoutube, FaTwitter } from "react-icons/fa";
+import { SiOnlyfans } from "react-icons/si";
 
-// Add window.ethereum type declaration
-declare global {
-  interface Window {
-    ethereum?: any;
-  }
-}
+const Projects = () => {
+  const getRandomWallo = () => {
+    const adjectives = ["cool", "hype", "fresh", "sunny", "zesty"];
+    const nouns = ["peach", "vibes", "grind", "drop", "buzz"];
+    return `@${adjectives[Math.floor(Math.random() * adjectives.length)]}${nouns[Math.floor(Math.random() * nouns.length)]}`;
+  };
 
-// Tipping contract ABI (simplified)
-const tipContract = {
-  address: "0x...ATL5DTipContract" as `0x${string}`,
-  abi: [
+  const creators = [
     {
-      inputs: [
-        { name: "creator", type: "address" },
-        { name: "amount", type: "uint256" }
-      ],
-      name: "tipCreator",
-      outputs: [],
-      stateMutability: "nonpayable",
-      type: "function"
+      category: "🍔 Food & Dining",
+      platform: "Food TikTok",
+      icon: <FaTiktok className="text-pink-500" />,
+      list: [
+        {
+          name: "👨🏾‍🍳 Atlanta Foodie",
+          handle: "@atlantafoodie",
+          followers: "420K",
+          url: "https://tiktok.com/@atlantafoodie",
+          wallet: "0x000...foodie",
+          booking: "https://cal.com/atlfoodie"
+        },
+        {
+          name: "🍗 The Hungry Black Man",
+          handle: "@thehungryblackman",
+          followers: "380K",
+          url: "https://tiktok.com/@thehungryblackman",
+          wallet: "0x000...hungry",
+          booking: "https://cal.com/hungryblackman"
+        }
+      ]
+    },
+    {
+      category: "💇🏽‍♀️ Beauty & Lifestyle",
+      platform: "Instagram",
+      icon: <FaInstagram className="text-purple-500" />,
+      list: [
+        {
+          name: "💄 MakeupByTeri",
+          handle: "@makeupbyteri",
+          followers: "1.2M",
+          url: "https://instagram.com/makeupbyteri",
+          wallet: "0x000...makeup",
+          booking: "https://cal.com/makeupbyteri"
+        },
+        {
+          name: "🧴 Atlanta Glow",
+          handle: "@atlantaglow",
+          followers: "890K",
+          url: "https://instagram.com/atlantaglow",
+          wallet: "0x000...glow",
+          booking: "https://cal.com/atlglow"
+        }
+      ]
+    },
+    {
+      category: "🎶 Music & Entertainment",
+      platform: "YouTube",
+      icon: <FaYoutube className="text-red-500" />,
+      list: [
+        {
+          name: "🎤 Kenny Burns",
+          handle: "@KennyBurnsTV",
+          followers: "350K",
+          url: "https://youtube.com/KennyBurnsTV",
+          wallet: "0x000...kenny",
+          booking: "https://cal.com/kennyburns"
+        },
+        {
+          name: "🎧 DJ Scream",
+          handle: "@djscream",
+          followers: "1.8M",
+          url: "https://youtube.com/djscream",
+          wallet: "0x000...djscream",
+          booking: "https://cal.com/djscream"
+        }
+      ]
+    },
+    {
+      category: "🏀 Sports & Fitness",
+      platform: "Twitter",
+      icon: <FaTwitter className="text-blue-400" />,
+      list: [
+        {
+          name: "🏋🏾‍♂️ Coach Trae",
+          handle: "@CoachTraeATL",
+          followers: "320K",
+          url: "https://twitter.com/CoachTraeATL",
+          wallet: "0x000...trae",
+          booking: "https://cal.com/coachtrae"
+        }
+      ]
+    },
+    {
+      category: "🔥 Adult Content",
+      platform: "OnlyFans",
+      icon: <SiOnlyfans className="text-red-400" />,
+      list: [
+        {
+          name: "🍑 Atlanta Peach",
+          handle: "@TheRealATLPeach",
+          followers: "2.4M",
+          url: "https://onlyfans.com/therealatlpeach",
+          wallet: "0x000...peach",
+          booking: "https://cal.com/atlpeach"
+        }
+      ]
     }
-  ] as const  // Mark as const for type inference
-};
+  ];
 
-const getRandomWallo = () => {
-  const adjectives = ["cool", "hype", "fresh", "sunny", "zesty"];
-  const nouns = ["peach", "vibes", "grind", "drop", "buzz"];
-  return `@${adjectives[Math.floor(Math.random() * adjectives.length)]}${nouns[Math.floor(Math.random() * nouns.length)]}`;
-};
-
-const creators = [
-  {
-    category: "🍔 Foodies",
-    list: [
-      {
-        name: "👅 TongueTiedFoodie",
-        platform: "TikTok 🍜",
-        handle: "@tonguetiedfoodie",
-        url: "https://www.tiktok.com/@tonguetiedfoodie",
-        wallet: "0x...foodie1" as `0x${string}`,
-        booking: "https://cal.com/tonguetied/atl5d"
-      },
-      {
-        name: "🍴 EatingWithErica",
-        platform: "TikTok 🧋",
-        handle: "@eatingwitherica",
-        url: "https://www.tiktok.com/@eatingwitherica",
-        wallet: "0x...erica2" as `0x${string}`,
-        booking: "https://cal.com/eatingwitherica/atl5d"
-      }
-    ],
-  },
-  {
-    category: "💇 Hair Game",
-    list: [
-      {
-        name: "💁 Sabrina Molu",
-        platform: "Instagram 💕",
-        handle: "@sabrinamolu",
-        url: "https://www.instagram.com/sabrinamolu",
-        wallet: "0x...molu3" as `0x${string}`,
-        booking: "https://cal.com/sabrinamolu/atl5d"
-      }
-    ],
-  }
-];
+  const handleTip = (wallet: string) => {
+    alert(`This will send $ATL to ${wallet} when fully implemented`);
+  };
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -81,16 +128,16 @@ const creators = [
         <h3 className="font-semibold mb-2">🔥 Pro Tip</h3>
         <p className="text-sm">
           Tip creators in $ATL or book them for your next livestream. 
-          All payments settle instantly on Base Network.
+          Wallet functionality activates when creators claim their profiles.
         </p>
       </div>
 
-      {creators.map(({ category, list }) => (
+      {creators.map(({ category, platform, icon, list }) => (
         <div key={category} className="mb-8">
           <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
             {category} 
-            <span className="text-xs bg-neutral-4 text-neutral-11 px-2 py-0.5 rounded-full">
-              {list.length} creators
+            <span className="text-xs bg-neutral-4 text-neutral-11 px-2 py-0.5 rounded-full flex items-center gap-1">
+              {icon} {platform} • {list.length} creators
             </span>
           </h3>
           
@@ -109,10 +156,10 @@ const creators = [
                   <div>
                     <h4 className="font-medium flex items-center gap-1.5">
                       {creator.name} 
-                      <span className="text-xs text-neutral-10">({creator.platform})</span>
+                      <span className="text-xs text-neutral-10">({creator.handle})</span>
                     </h4>
                     <p className="text-xs text-neutral-11 mt-1">
-                      {creator.handle} • 🏦 WALLO: <em>{getRandomWallo()}</em>
+                      {creator.followers} followers • 🏦 WALLO: <em>{getRandomWallo()}</em>
                     </p>
                   </div>
                   
@@ -129,10 +176,9 @@ const creators = [
                   </div>
                 </div>
                 
-                {/* Tipping & Booking Actions */}
                 <div className="mt-3 flex gap-2 flex-wrap">
                   <button 
-                    onClick={() => handleTip(creator.wallet, 1000)}
+                    onClick={() => handleTip(creator.wallet)}
                     className={cn(
                       "flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-full",
                       "bg-[#A6192E]/10 hover:bg-[#A6192E]/20",
@@ -141,7 +187,7 @@ const creators = [
                     )}
                   >
                     <FaEthereum className="text-[#A6192E] size-3" />
-                    Tip $ATL
+                    Tip $ATL (Coming Soon)
                   </button>
                   
                   <a
@@ -158,7 +204,10 @@ const creators = [
                   </a>
                   
                   <button
-                    onClick={() => navigator.clipboard.writeText(creator.wallet)}
+                    onClick={() => {
+                      navigator.clipboard.writeText(creator.wallet);
+                      alert("Wallet address copied!");
+                    }}
                     className={cn(
                       "px-2 py-1.5 text-xs rounded-full",
                       "bg-neutral-3 hover:bg-neutral-4",
@@ -190,3 +239,5 @@ const creators = [
     </div>
   );
 };
+
+export default Projects;
