@@ -11,29 +11,29 @@ export default () => {
 
         <div className="flex flex-col items-start gap-2">
           <h1 className="font-medium text-lg lg:text-3xl">🌴 TREE.</h1>
-          <h2 className="font-medium text-2xl lg:text-xl">ZA LINK-TREE</h2>
+          <h2 className="font-medium text-2xl lg:text-xl">🅰️TL5D LINK-TREE</h2>
         </div>
       </div>
 
       <div className="flex flex-col gap-3 text-lg">
-        <p>ZATREE is the gateway to the DISPO.SOCIAL metzaverse branded "link in bio" solution designed exclusively for:</p>
+        <p>TREE. is the ATL5D.com linktree "link in bio" for creators standing on business mapped a What3Words 3 word 🅰️DDY ///keep.it.simple.:</p>
         
         <div className="flex items-start gap-3">
           <span>🏬</span>
-          <span>Dispensaries to showcase dmerch (digital merchandise)</span>
+          <span>BIZ</span>
         </div>
 
         <div className="flex items-start gap-3">
           <span>💫</span>
-          <span>ZAFLUENCERS (cannabis creators) to monetize their followers with ZANIME cards</span>
+          <span>🅰️FLUENCERS</span>
         </div>
 
         <p className="mt-4">✨ <strong>Instant Onboarding:</strong></p>
-        <p>Summon the 🧙🏼‍♂️ <strong>Wizard of Hahz</strong> on Telegram to:</p>
+        <p>Summon the 🧙🏼‍♂️ <strong>Wizard of Hahz</strong> on Telegram to rise up:</p>
 
         <div className="flex items-start gap-3">
           <span>🔗</span>
-          <span>Claim your custom ZATREE</span>
+          <span>Claim your custom 🅰️ TREE.</span>
         </div>
 
         <div className="flex items-start gap-3">
@@ -43,7 +43,7 @@ export default () => {
 
         <div className="flex items-start gap-3">
           <span>🦶🏽🦶🏽</span>
-          <span>Drive real foot traffic to your dispensary with a dvent</span>
+          <span>Drive real foot traffic to your 🅰️ block.</span>
         </div>
       </div>
 
