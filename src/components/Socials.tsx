@@ -3,14 +3,39 @@ import { Simple } from "./icons";
 
 const socials = [
   {
-    href: "https://x.com/disposocial",
+    href: "https://www.tiktok.com/@atl5d",
+    name: "TikTok",
+    icon: Simple.IconTiktok,
+  },
+  {
+    href: "https://www.instagram.com/atl5d",
+    name: "Instagram",
+    icon: Simple.IconInstagram,
+  },
+  {
+    href: "https://www.threads.net/@atl5d",
+    name: "IG",
+    icon: Simple.IconThreads,
+  },
+  {
+    href: "https://t.me/atl5d",
+    name: "Telegram",
+    icon: Simple.IconTelegram,
+  },
+  {
+    href: "https://x.com/atl5d",
     name: "X",
     icon: Simple.IconX,
   },
   {
-    href: "https://www.youtube.com/disposocial",
-    name: "Youtube",
+    href: "https://www.youtube.com/atlverse",
+    name: "YouTube",
     icon: Simple.IconYoutube,
+  },
+  {
+    href: "https://irl.travel",
+    name: "IRL.TRAVEL",
+    icon: Simple.IconSun,
   },
 ];
 
@@ -18,7 +43,7 @@ export default () => {
   return (
     <div>
       <h2 className="font-medium text-xl mb-3">🌌 SOCIALS</h2>
-      <ul className="flex items-center justify-center gap-3 p-1">
+      <ul className="flex items-center justify-center flex-wrap gap-3 p-1">
         {socials.map((social) => {
           return (
             <li key={social.name}>
