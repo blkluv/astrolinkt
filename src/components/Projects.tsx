@@ -71,8 +71,6 @@ const creators = [
 ];
 
 export default () => {
-  const [userAddress, setUserAddress] = React.useState<string | null>(null);
-
   const handleTip = async (creatorAddress: string, amount: number) => {
     try {
       // Connect to wallet first
@@ -156,7 +154,7 @@ export default () => {
                       as="a"
                       href={creator.url}
                       target="_blank"
-                      size="sm"
+                      size="md"
                       aria-label={`View ${creator.name}`}
                     >
                       <Lucide.IconExternalLink className="size-3.5" />
