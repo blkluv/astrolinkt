@@ -3,9 +3,16 @@ import { cn } from "./ui/utils";
 import { Lucide } from "./icons";
 import { FaEthereum } from "react-icons/fa";
 
+// Add window.ethereum type declaration
+declare global {
+  interface Window {
+    ethereum?: any;
+  }
+}
+
 // Tipping contract ABI (simplified)
 const tipContract = {
-  address: "0x...ATL5DTipContract",
+  address: "0x...ATL5DTipContract" as `0x${string}`,
   abi: [
     {
       inputs: [
@@ -17,7 +24,7 @@ const tipContract = {
       stateMutability: "nonpayable",
       type: "function"
     }
-  ]
+  ] as const  // Mark as const for type inference
 };
 
 const getRandomWallo = () => {
@@ -35,7 +42,7 @@ const creators = [
         platform: "TikTok 🍜",
         handle: "@tonguetiedfoodie",
         url: "https://www.tiktok.com/@tonguetiedfoodie",
-        wallet: "0x...foodie1",
+        wallet: "0x...foodie1" as `0x${string}`,
         booking: "https://cal.com/tonguetied/atl5d"
       },
       {
@@ -43,7 +50,7 @@ const creators = [
         platform: "TikTok 🧋",
         handle: "@eatingwitherica",
         url: "https://www.tiktok.com/@eatingwitherica",
-        wallet: "0x...erica2",
+        wallet: "0x...erica2" as `0x${string}`,
         booking: "https://cal.com/eatingwitherica/atl5d"
       }
     ],
@@ -56,7 +63,7 @@ const creators = [
         platform: "Instagram 💕",
         handle: "@sabrinamolu",
         url: "https://www.instagram.com/sabrinamolu",
-        wallet: "0x...molu3",
+        wallet: "0x...molu3" as `0x${string}`,
         booking: "https://cal.com/sabrinamolu/atl5d"
       }
     ],
@@ -64,19 +71,31 @@ const creators = [
 ];
 
 export default () => {
+  const [userAddress, setUserAddress] = React.useState<string | null>(null);
+
   const handleTip = async (creatorAddress: string, amount: number) => {
     try {
       // Connect to wallet first
       const { ethereum } = window;
       if (!ethereum) throw new Error("No wallet detected");
       
+      // Request accounts if not already connected
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      setUserAddress(accounts[0]);
+      
+      if (!userAddress) throw new Error("No connected wallet");
+
       // Call smart contract
       await ethereum.request({
         method: "eth_sendTransaction",
         params: [{
           to: tipContract.address,
           from: userAddress,
-          data: tipContract.abi.encodeFunctionData("tipCreator", [creatorAddress, amount])
+          data: encodeFunctionData({
+            abi: tipContract.abi,
+            functionName: "tipCreator",
+            args: [creatorAddress, amount]
+          })
         }]
       });
       
