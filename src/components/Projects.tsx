@@ -70,39 +70,6 @@ const creators = [
   }
 ];
 
-export default () => {
-  const handleTip = async (creatorAddress: string, amount: number) => {
-    try {
-      // Connect to wallet first
-      const { ethereum } = window;
-      if (!ethereum) throw new Error("No wallet detected");
-      
-      // Request accounts if not already connected
-      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-      setUserAddress(accounts[0]);
-      
-      if (!userAddress) throw new Error("No connected wallet");
-
-      // Call smart contract
-      await ethereum.request({
-        method: "eth_sendTransaction",
-        params: [{
-          to: tipContract.address,
-          from: userAddress,
-          data: encodeFunctionData({
-            abi: tipContract.abi,
-            functionName: "tipCreator",
-            args: [creatorAddress, amount]
-          })
-        }]
-      });
-      
-      alert(`Sent ${amount} $ATL!`);
-    } catch (error) {
-      console.error("Tip failed:", error);
-    }
-  };
-
   return (
     <div className="max-w-2xl mx-auto">
       <h2 className="font-medium text-2xl mb-4 flex items-center gap-2">
