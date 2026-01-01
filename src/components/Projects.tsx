@@ -563,7 +563,7 @@ const Projects = () => {
         </p>
         <button
           onClick={() => handleBookingClick("General Inquiry", calComLink)}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-full text-sm font-semibold hover:bg-gray-100 hover:shadow-lg transition-all transform hover:scale-105"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-black text-blue-600 rounded-full text-sm font-semibold hover:bg-gray-100 hover:shadow-lg transition-all transform hover:scale-105"
         >
           <FaCalendarAlt />
           View Full Calendar & Availability
