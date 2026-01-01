@@ -1,24 +1,24 @@
 
 const socials = [
   {
-    name: "TikTok",
-    href: "https://tiktok.com/@atl5d",
+    name: "TIKTOK",
+    href: "https://tiktok.com/@campcreekmarket",
     icon: "🎵",
   },
   {
-    name: "Instagram",
-    href: "https://instagram.com/atl5d",
+    name: "INSTAGRAM",
+    href: "https://instagram.com/campcreekmarket",
     icon: "📸",
   },
   {
-    name: "Telegram",
-    href: "https://t.me/atl5d",
+    name: "TELEGRAM",
+    href: "https://t.me/campcreekmarket",
     icon: "📨",
   },
   {
-    name: "IRL.TRAVEL",
-    href: "https://irl.travel",
-    icon: "☀️",
+    name: "DISCORD",
+    href: "https://discord.gg/HkZ4pazQFb",
+    icon: "🛒",
   },
 ];
 

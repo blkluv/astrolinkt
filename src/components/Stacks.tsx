@@ -6,38 +6,38 @@ import { Lucide } from "./icons";
 const stacks = [
   {
     name: "🗺️ IRL.TRAVEL",
-    category: "IRL.TRAVEL is the offial ATL5D social media.",
+    category: "AI Travel - Let AI find your next travel destination based on your budget and interests.",
     url: "https://irl.travel",
   },
     {
-    name: "🏦 W🅰️LLO",
-    category: "The official 🅰️TL5D $ATL loyalty rewards wallet",
-    url: "https://wallo.atl5d.com",
+    name: "🏦 BLKLUV.ORG",
+    category: "The New Cash App - Send payments with BLKLUV.ORG with no middleman fees",
+    url: "https://blkluv.org",
   },
   {
-    name: "🤳 TIKTOK",
-    category: "The magic happens on TikTok. Book Atlanta biz on @ATL5D, watch the results before you pay.",
-    url: "https://tiktok.com/@atl5d",
+    name: "🤳 5DTOK.COM",
+    category: "The New TikTok - Post short videos and earn Bitcoin tips.",
+    url: "https://5dtok.com",
   },
     {
-    name: "🎮 RUN.",
-    category: "ATL infinite run game with local characters.",
-    url: "https://run.atl5d.com",
+    name: "💸 IAMWEALTHY.APP",
+    category: "Money App - Manage your money and plan a budget with AI assistance for free.",
+    url: "https://iamwealthy.app",
   },
     {
-    name: "🎤 MIC.",
-    category: "Earn Bitcoin zap tips for leaveing Voicemail style travel reviews.",
-    url: "https://mic.irl.travel",
+    name: "🎙️ CAMP CREEK SALE PODCAST",
+    category: "@CampCreekMarket TikTok Sale Podcast - Create a reel about your local service or product on sale.",
+    url: "https://www.tiktok.com/effect/Camp-Creek-Sales-3626857215?is_from_webapp=1&sender_device=pc",
   },
   {
-    name: "🧭 MAP",
-    category: "ATL5D map of creators near you coming soon.",
+    name: "📦 DELIVERY",
+    category: "Book a delivery anywhere in Camp Creek Atlanta exit for $10.",
     url: "",
   },
   {
-    name: "🤖 AI",
-    category: "ATL AI chat bot coming soon.",
-    url: "",
+    name: "🚗 DRIVER",
+    category: "Book a driver to take you anywhere in Camp Creek Atlanta exit for $10.",
+    url: "https://buy.stripe.com/00w14n2qt9L04WzcHv5wI1k",
   },
 ];
 

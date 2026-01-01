@@ -5,13 +5,77 @@ import { FaEthereum, FaInstagram, FaTiktok, FaYoutube, FaTwitter } from "react-i
 import { SiOnlyfans } from "react-icons/si";
 
 const Projects = () => {
-  const getRandomWallo = () => {
-    const adjectives = ["cool", "hype", "fresh", "sunny", "zesty"];
-    const nouns = ["peach", "vibes", "grind", "drop", "buzz"];
-    return `@${adjectives[Math.floor(Math.random() * adjectives.length)]}${nouns[Math.floor(Math.random() * nouns.length)]}`;
+  const escrowAddress = "0x742d35Cc6634C0532925a3b8D4B8A7b7b8b8b8b8"; // Replace with actual escrow address
+
+  const handleCopyEscrow = () => {
+    navigator.clipboard.writeText(escrowAddress);
+    alert("Escrow address copied to clipboard!");
   };
 
-  const creators = [
+  const domains = [
+    {
+      category: "🌐 Web5 Platforms",
+      platform: "Decentralized Apps",
+      icon: "🛡️",
+      list: [
+        {
+          name: "x.hahz.live",
+          handle: "Web5 X",
+          followers: "Decentralized Social",
+          url: "https://x.hahz.live",
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
+        },
+        {
+          name: "zapddit.hahz.live",
+          handle: "Web5 Reddit",
+          followers: "Community Forums",
+          url: "https://zapddit.hahz.live",
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
+        },
+        {
+          name: "nftv.hahz.live",
+          handle: "Web5 YouTube",
+          followers: "Video Platform",
+          url: "https://nftv.hahz.live",
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
+        },
+        {
+          name: "event.hahz.live",
+          handle: "Web5 Meetup",
+          followers: "Event Platform",
+          url: "https://event.hahz.live",
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
+        },
+        {
+          name: "shopstr.hahz.live",
+          handle: "Web5 Shopify",
+          followers: "E-commerce",
+          url: "https://shopstr.hahz.live",
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
+        },
+        {
+          name: "mic.hahz.live",
+          handle: "Earn Bitcoin for reviews",
+          followers: "Review Platform",
+          url: "https://mic.hahz.live",
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
+        },
+        {
+          name: "Pollerama.hahz.live",
+          handle: "Social media for polls",
+          followers: "Polling Platform",
+          url: "https://pollerama.hahz.live",
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
+        }
+      ]
+    },
     {
       category: "🍔 Food & Dining",
       platform: "Food TikTok",
@@ -22,16 +86,16 @@ const Projects = () => {
           handle: "@atlantafoodie",
           followers: "420K",
           url: "https://tiktok.com/@atlantafoodie",
-          wallet: "0x000...foodie",
-          booking: "https://cal.com/atlfoodie"
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
         },
         {
           name: "🍗 The Hungry Black Man",
           handle: "@thehungryblackman",
           followers: "380K",
           url: "https://tiktok.com/@thehungryblackman",
-          wallet: "0x000...hungry",
-          booking: "https://cal.com/hungryblackman"
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
         }
       ]
     },
@@ -45,16 +109,16 @@ const Projects = () => {
           handle: "@makeupbyteri",
           followers: "1.2M",
           url: "https://instagram.com/makeupbyteri",
-          wallet: "0x000...makeup",
-          booking: "https://cal.com/makeupbyteri"
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
         },
         {
           name: "🧴 Atlanta Glow",
           handle: "@atlantaglow",
           followers: "890K",
           url: "https://instagram.com/atlantaglow",
-          wallet: "0x000...glow",
-          booking: "https://cal.com/atlglow"
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
         }
       ]
     },
@@ -68,16 +132,16 @@ const Projects = () => {
           handle: "@KennyBurnsTV",
           followers: "350K",
           url: "https://youtube.com/KennyBurnsTV",
-          wallet: "0x000...kenny",
-          booking: "https://cal.com/kennyburns"
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
         },
         {
           name: "🎧 DJ Scream",
           handle: "@djscream",
           followers: "1.8M",
           url: "https://youtube.com/djscream",
-          wallet: "0x000...djscream",
-          booking: "https://cal.com/djscream"
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
         }
       ]
     },
@@ -91,60 +155,65 @@ const Projects = () => {
           handle: "@CoachTraeATL",
           followers: "320K",
           url: "https://twitter.com/CoachTraeATL",
-          wallet: "0x000...trae",
-          booking: "https://cal.com/coachtrae"
+          wallet: escrowAddress,
+          orangeLink: "https://funraise-thirdweb.hahz.live" // Updated with funraise thirdweb link
         }
       ]
     },
     {
       category: "🔥 Adult Content",
-      platform: "OnlyFans",
+      platform: "Twerk",
       icon: <SiOnlyfans className="text-red-400" />,
       list: [
         {
           name: "🍑 Atlanta Peach",
-          handle: "@TheRealATLPeach",
+          handle: "@twerkrz",
           followers: "2.4M",
-          url: "https://onlyfans.com/therealatlpeach",
-          wallet: "0x000...peach",
-          booking: "https://cal.com/atlpeach"
+          url: "https://twerk.dance",
+          wallet: escrowAddress,
+          orangeLink: "https://orange.hahz.live"
         }
       ]
     }
   ];
 
-  const handleTip = (wallet: string) => {
-    alert(`This will send $ATL to ${wallet} when fully implemented`);
-  };
-
   return (
     <div className="max-w-2xl mx-auto">
       <h2 className="font-medium text-2xl mb-4 flex items-center gap-2">
-        📍 ATL5D Creator Hub 
-        <span className="text-xs bg-[#A6192E] text-white px-2 py-1 rounded-full">Powered by WALLO</span>
+        🛡️ Web5 Domains & Escrow
+        <span className="text-xs bg-[#A6192E] text-white px-2 py-1 rounded-full">Unstoppable Domains</span>
       </h2>
       
       <div className="mb-6 p-4 bg-neutral-2 rounded-xl border border-neutral-4">
-        <h3 className="font-semibold mb-2">🔥 Pro Tip</h3>
+        <h3 className="font-semibold mb-2">🔒 Secure Escrow System</h3>
         <p className="text-sm">
-          Tip creators in $ATL or book them for your next livestream. 
-          Wallet functionality activates when creators claim their profiles.
+          All transactions use our secure escrow wallet powered by Unstoppable Domains. 
+          Funds are held safely until services are delivered.
         </p>
+        <div className="mt-2 flex items-center gap-2">
+          <code className="text-xs bg-neutral-3 px-2 py-1 rounded">{escrowAddress}</code>
+          <button 
+            onClick={handleCopyEscrow}
+            className="text-xs bg-[#A6192E] text-white px-2 py-1 rounded hover:bg-[#8B1526] transition-colors"
+          >
+            Copy
+          </button>
+        </div>
       </div>
 
-      {creators.map(({ category, platform, icon, list }) => (
+      {domains.map(({ category, platform, icon, list }) => (
         <div key={category} className="mb-8">
           <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
             {category} 
             <span className="text-xs bg-neutral-4 text-neutral-11 px-2 py-0.5 rounded-full flex items-center gap-1">
-              {icon} {platform} • {list.length} creators
+              {icon} {platform} • {list.length} {category.includes('Platforms') ? 'domains' : 'creators'}
             </span>
           </h3>
           
           <ul className="grid grid-cols-1 gap-3">
-            {list.map((creator) => (
+            {list.map((item) => (
               <li
-                key={creator.handle}
+                key={item.name}
                 className={cn(
                   "group flex flex-col p-4",
                   "bg-neutral-2 hover:bg-neutral-3",
@@ -155,21 +224,31 @@ const Projects = () => {
                 <div className="flex justify-between items-start">
                   <div>
                     <h4 className="font-medium flex items-center gap-1.5">
-                      {creator.name} 
-                      <span className="text-xs text-neutral-10">({creator.handle})</span>
+                      {item.name} 
+                      <span className="text-xs text-neutral-10">({item.handle})</span>
                     </h4>
                     <p className="text-xs text-neutral-11 mt-1">
-                      {creator.followers} followers • 🏦 WALLO: <em>{getRandomWallo()}</em>
+                      {item.followers} • 🔒 Escrow: <code className="text-[10px]">{item.wallet.slice(0,8)}...{item.wallet.slice(-6)}</code>
                     </p>
                   </div>
                   
                   <div className="flex gap-1">
                     <IconButton
                       as="a"
-                      href={creator.url}
+                      href={item.orangeLink}
                       target="_blank"
                       size="md"
-                      aria-label={`View ${creator.name}`}
+                      aria-label={`Orange Circle ${item.name}`}
+                      className="bg-orange-500 hover:bg-orange-600 text-white"
+                    >
+                      🟠
+                    </IconButton>
+                    <IconButton
+                      as="a"
+                      href={item.url}
+                      target="_blank"
+                      size="md"
+                      aria-label={`View ${item.name}`}
                     >
                       <Lucide.IconExternalLink className="size-3.5" />
                     </IconButton>
@@ -178,7 +257,7 @@ const Projects = () => {
                 
                 <div className="mt-3 flex gap-2 flex-wrap">
                   <button 
-                    onClick={() => handleTip(creator.wallet)}
+                    onClick={handleCopyEscrow}
                     className={cn(
                       "flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-full",
                       "bg-[#A6192E]/10 hover:bg-[#A6192E]/20",
@@ -187,36 +266,21 @@ const Projects = () => {
                     )}
                   >
                     <FaEthereum className="text-[#A6192E] size-3" />
-                    Tip $ATL (Coming Soon)
+                    Copy Escrow Address
                   </button>
                   
                   <a
-                    href={creator.booking}
+                    href={item.orangeLink}
                     target="_blank"
                     className={cn(
                       "flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-full",
-                      "bg-neutral-4 hover:bg-neutral-5",
-                      "border border-neutral-6",
+                      "bg-orange-500/10 hover:bg-orange-500/20",
+                      "border border-orange-500/20 text-orange-700",
                       "transition-colors"
                     )}
                   >
-                    📅 Book for Livestream
+                    🟠 Orange Portal
                   </a>
-                  
-                  <button
-                    onClick={() => {
-                      navigator.clipboard.writeText(creator.wallet);
-                      alert("Wallet address copied!");
-                    }}
-                    className={cn(
-                      "px-2 py-1.5 text-xs rounded-full",
-                      "bg-neutral-3 hover:bg-neutral-4",
-                      "text-neutral-10 hover:text-neutral-11",
-                      "transition-colors"
-                    )}
-                  >
-                    Copy Wallet
-                  </button>
                 </div>
               </li>
             ))}
@@ -225,15 +289,16 @@ const Projects = () => {
       ))}
       
       <div className="mt-8 p-4 bg-[#FFD700]/10 rounded-xl border border-[#FFD700]/20 text-center">
-        <h3 className="font-medium mb-2">Want to join this list?</h3>
+        <h3 className="font-medium mb-2">🚀 Launch Your Web5 Domain</h3>
         <p className="text-sm mb-3">
-          ATL creators can apply to be featured and start earning $ATL tips.
+          Get your own unstoppable domain and join the decentralized web revolution. 
+          Secure your digital identity with Web5 technology.
         </p>
         <a
-          href="https://t.me/atl5d"
-          className="inline-block px-4 py-2 bg-[#A6192E] text-white rounded-full text-sm font-medium"
+          href="https://orange.hahz.live"
+          className="inline-block px-4 py-2 bg-orange-500 text-white rounded-full text-sm font-medium hover:bg-orange-600 transition-colors"
         >
-          Apply as Creator
+          🟠 Get Started with Orange
         </a>
       </div>
     </div>
