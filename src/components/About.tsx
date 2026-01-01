@@ -21,6 +21,7 @@ export default () => {
         <p className="text-xl font-semibold">✨ UNITED</p>
         <p>
            <strong>👋 Welcome to ATL5D</strong><br>
+            
             We designed a new blueprint uniting Atlanta businesses & creators — replacing competition
             with purpose-driven collaboration. Subscribe on Discord for livestream bookings, branded
             TikTok ReelView/podcast AR effects + TikTok/Instagram promotion.</p>
