@@ -20,7 +20,7 @@ export default () => {
       <div className="flex flex-col gap-4 text-lg">
         <p className="text-xl font-semibold">✨ UNITED</p>
         <p>
-           <strong>👋 Welcome to ATL5D</strong>
+           <strong>👋 Welcome to ATL5D</strong><br>
             We designed a new blueprint uniting Atlanta businesses & creators — replacing competition
             with purpose-driven collaboration using advanced tech. Subscribe on Discord for branded
             TikTok ReelView/podcast AR effects + TikTok/Instagram promotion.</p>
