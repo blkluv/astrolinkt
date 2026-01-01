@@ -3,7 +3,6 @@ import { IconButton } from "./ui";
 import { cn } from "./ui/utils";
 import { Lucide } from "./icons";
 import { FaInstagram, FaTiktok, FaYoutube, FaTwitter, FaCalendarAlt } from "react-icons/fa";
-import { SiOnlyfans } from "react-icons/si";
 
 // Define types for better TypeScript support
 interface CreatorItem {
@@ -255,25 +254,6 @@ const Projects = () => {
           description: "Service consultation"
         }
       ]
-    },
-    {
-      category: "🔥 Adult Content",
-      platform: "Twerk",
-      icon: <SiOnlyfans className="text-red-400" />,
-      list: [
-        {
-          name: "🍑 Atlanta Peach",
-          handle: "@twerkrz",
-          followers: "2.4M",
-          url: "https://twerk.dance",
-          bookingType: "premium",
-          bookingLink: "https://cal.com/atl5d/30min",
-          bookingLabel: "Show Production",
-          price: "$155",
-          duration: "30 min",
-          description: "Adult content planning"
-        }
-      ]
     }
   ];
 
@@ -334,6 +314,17 @@ const Projects = () => {
   // Helper function to check if item has booking properties
   const hasBookingInfo = (item: CreatorItem): item is CreatorItem & Required<Pick<CreatorItem, 'bookingType' | 'bookingLink' | 'bookingLabel' | 'price' | 'duration'>> => {
     return !!item.bookingLink;
+  };
+
+  // Helper function to get website type label
+  const getWebsiteType = (url: string): string => {
+    if (url.includes('tiktok')) return 'TikTok';
+    if (url.includes('instagram')) return 'Instagram';
+    if (url.includes('youtube')) return 'YouTube';
+    if (url.includes('twitter')) return 'Twitter';
+    if (url.includes('5dtok.com')) return 'Web5 Platform';
+    if (url.includes('hahz.live')) return 'Web5 Platform';
+    return 'Website';
   };
 
   return (
@@ -495,7 +486,7 @@ const Projects = () => {
                       href={item.url}
                       target="_blank"
                       size="md"
-                      aria-label={`View ${item.name}`}
+                      aria-label={`Visit ${item.name}`}
                     >
                       <Lucide.IconExternalLink className="size-3.5" />
                     </IconButton>
@@ -533,7 +524,7 @@ const Projects = () => {
                     </button>
                   )}
                   
-                  {/* VIEW PROFILE BUTTON - FIXED COLORS */}
+                  {/* VISIT WEBSITE BUTTON - UPDATED */}
                   <a
                     href={item.url}
                     target="_blank"
@@ -546,13 +537,10 @@ const Projects = () => {
                   >
                     <div className="flex items-center gap-2">
                       <Lucide.IconExternalLink className="size-4" />
-                      <span className="font-medium">View Profile</span>
+                      <span className="font-medium">Visit Website</span>
                     </div>
                     <div className="mt-1 text-xs text-gray-300">
-                      {item.url.includes('tiktok') ? 'TikTok' : 
-                       item.url.includes('instagram') ? 'Instagram' :
-                       item.url.includes('youtube') ? 'YouTube' :
-                       item.url.includes('twitter') ? 'Twitter' : 'Social Media'}
+                      {getWebsiteType(item.url)}
                     </div>
                   </a>
                 </div>
