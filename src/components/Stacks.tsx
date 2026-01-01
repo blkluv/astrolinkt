@@ -30,14 +30,14 @@ const stacks = [
     url: "https://www.tiktok.com/effect/Camp-Creek-Sales-3626857215?is_from_webapp=1&sender_device=pc",
   },
   {
-    name: "📦 DELIVERY",
-    category: "Book a delivery anywhere in Camp Creek Atlanta exit for $10.",
-    url: "",
+    name: "🎙️ CAMP CREEK DELIVERY PODCAST",
+    category: "Provide proof of a Camp Creek exit delivery on TikTok to get paid.",
+    url: "https://www.tiktok.com/effect/Camp-Creek-Delivery-3632214827?is_from_webapp=1&sender_device=pc",
   },
   {
-    name: "🚗 DRIVER",
-    category: "Book a driver to take you anywhere in Camp Creek Atlanta exit for $10.",
-    url: "https://buy.stripe.com/00w14n2qt9L04WzcHv5wI1k",
+    name: "🎙️ CAMP CREEK DRIVE PODCAST",
+    category: "Provide proof of a Camp Creek exit driver service on TikTok to get paid.",
+    url: "https://www.tiktok.com/effect/Camp-Creek-Driver-3632215447?is_from_webapp=1&sender_device=pc",
   },
 ];
 

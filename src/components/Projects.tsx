@@ -5,6 +5,47 @@ import { Lucide } from "./icons";
 import { FaInstagram, FaTiktok, FaYoutube, FaTwitter, FaCalendarAlt } from "react-icons/fa";
 import { SiOnlyfans } from "react-icons/si";
 
+// Define types for better TypeScript support
+interface CreatorItem {
+  name: string;
+  handle: string;
+  followers: string;
+  url: string;
+  bookingType?: string;
+  bookingLink?: string;
+  bookingLabel?: string;
+  price?: string;
+  duration?: string;
+  description?: string;
+}
+
+interface Domain {
+  category: string;
+  platform: string;
+  icon: string | React.ReactNode;
+  list: CreatorItem[];
+}
+
+interface PricingTier {
+  name: string;
+  price: string;
+  duration: string;
+  type: string;
+  color: string;
+}
+
+// Declare Cal.com global variable
+declare global {
+  interface Window {
+    Cal?: {
+      (command: string, ...args: any[]): void;
+      loaded?: boolean;
+      ns?: Record<string, any>;
+      q?: any[];
+    };
+  }
+}
+
 const Projects = () => {
   const escrowAddress = "0x742d35Cc6634C0532925a3b8D4B8A7b7b8b8b8b8";
   const calComLink = "https://cal.com/atl5d";
@@ -14,36 +55,48 @@ const Projects = () => {
     alert("Escrow address copied to clipboard!");
   };
 
-  // Initialize Cal.com embed
+  // Initialize Cal.com embed - FIXED VERSION
   useEffect(() => {
-    (function (C, A, L) {
-      let p = function (a, ar) { a.q.push(ar); };
+    (function (C: Window, A: string, L: string) {
+      let p = function (a: any, ar: any) { 
+        if (a && a.q) a.q.push(ar); 
+      };
       let d = C.document;
       C.Cal = C.Cal || function () {
-        let cal = C.Cal;
+        let cal = C.Cal!;
         let ar = arguments;
         if (!cal.loaded) {
           cal.ns = {};
-          cal.q = cal.q || [];
+          cal.q = [];
           d.head.appendChild(d.createElement("script")).src = A;
           cal.loaded = true;
         }
         if (ar[0] === L) {
-          const api = function () { p(api, arguments); };
+          const api: any = function () { 
+            if (p) p(api, arguments); 
+          };
           const namespace = ar[1];
-          api.q = api.q || [];
-          typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+          api.q = [];
+          if (typeof namespace === "string") {
+            cal.ns![namespace] = api;
+            p(api, ar);
+          } else {
+            p(cal, ar);
+          }
           return;
         }
         p(cal, ar);
       };
     })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init");
+    
+    if (window.Cal) {
+      window.Cal("init");
+    }
   }, []);
 
-  const domains = [
+  const domains: Domain[] = [
     {
-      category: "🌐 Web5 Platforms",
+      category: "🌐 ATL5D Platforms",
       platform: "Decentralized Apps",
       icon: "🛡️",
       list: [
@@ -54,34 +107,34 @@ const Projects = () => {
           url: "https://5dtok.com"
         },
         {
-          name: "zapddit.hahz.live",
-          handle: "Web5 Reddit",
-          followers: "Community Forums",
-          url: "https://zapddit.hahz.live"
+          name: "5DTOK SHOP",
+          handle: "Earn Bitcoin for selling products",
+          followers: "Bitcoin Shopify",
+          url: "https://shop.5dtok.com"
         },
         {
-          name: "nftv.hahz.live",
-          handle: "Web5 YouTube",
-          followers: "Video Platform",
-          url: "https://nftv.hahz.live"
+          name: "5DTOK ZSTREAM",
+          handle: "Earn Bitcoin livestreaming",
+          followers: "Bitcoin Twitch",
+          url: "https://zstream.5dtok.com"
         },
         {
-          name: "event.hahz.live",
-          handle: "Web5 Meetup",
-          followers: "Event Platform",
-          url: "https://event.hahz.live"
+          name: "5DTOK EVENTS",
+          handle: "Earn Bitcoin throwing events",
+          followers: "Bitcoin Eventbrite",
+          url: "https://events.5dtok.com"
         },
         {
-          name: "shopstr.hahz.live",
-          handle: "Web5 Shopify",
-          followers: "E-commerce",
-          url: "https://shopstr.hahz.live"
+          name: "5DTOK MUSIK",
+          handle: "Earn Bitcoin streaming music",
+          followers: "Bitcoin Spotify",
+          url: "https://musik.5dtok.com"
         },
         {
-          name: "mic.hahz.live",
+          name: "5DTOK MIC",
           handle: "Earn Bitcoin for reviews",
-          followers: "Review Platform",
-          url: "https://mic.hahz.live"
+          followers: "Bitcoin Google Reviews",
+          url: "https://mic.5dtok.com"
         },
         {
           name: "Pollerama.hahz.live",
@@ -225,18 +278,18 @@ const Projects = () => {
   ];
 
   // Handle Cal.com booking
-  const handleBookingClick = (creatorName, bookingLink) => {
-    if (typeof Cal === 'undefined') {
+  const handleBookingClick = (creatorName: string, bookingLink: string) => {
+    if (typeof window.Cal === 'undefined') {
       console.error('Cal.com script not loaded');
       window.open(bookingLink, '_blank');
       return;
     }
     
-    Cal("prefill", {
+    window.Cal("prefill", {
       name: creatorName,
     });
     
-    Cal("inline", {
+    window.Cal("inline", {
       elementOrSelector: "#cal-booking-modal",
       calLink: bookingLink.replace("https://cal.com/", ""),
       config: {
@@ -247,7 +300,7 @@ const Projects = () => {
   };
 
   // Pricing tiers data
-  const pricingTiers = [
+  const pricingTiers: PricingTier[] = [
     {
       name: "Quick Promo",
       price: "FREE",
@@ -277,6 +330,11 @@ const Projects = () => {
       color: "yellow"
     }
   ];
+
+  // Helper function to check if item has booking properties
+  const hasBookingInfo = (item: CreatorItem): item is CreatorItem & Required<Pick<CreatorItem, 'bookingType' | 'bookingLink' | 'bookingLabel' | 'price' | 'duration'>> => {
+    return !!item.bookingLink;
+  };
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -446,7 +504,7 @@ const Projects = () => {
                 
                 <div className="mt-3 flex gap-2 flex-wrap">
                   {/* CAL.COM BOOKING BUTTON - FIXED COLORS */}
-                  {item.bookingLink && (
+                  {hasBookingInfo(item) && (
                     <button 
                       onClick={() => handleBookingClick(item.name, item.bookingLink)}
                       className={cn(
@@ -491,7 +549,10 @@ const Projects = () => {
                       <span className="font-medium">View Profile</span>
                     </div>
                     <div className="mt-1 text-xs text-gray-300">
-                      TikTok/Instagram
+                      {item.url.includes('tiktok') ? 'TikTok' : 
+                       item.url.includes('instagram') ? 'Instagram' :
+                       item.url.includes('youtube') ? 'YouTube' :
+                       item.url.includes('twitter') ? 'Twitter' : 'Social Media'}
                     </div>
                   </a>
                 </div>
@@ -514,7 +575,7 @@ const Projects = () => {
         </p>
         <button
           onClick={() => handleBookingClick("General Inquiry", calComLink)}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-black text-blue-600 rounded-full text-sm font-semibold hover:bg-gray-100 hover:shadow-lg transition-all transform hover:scale-105"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-full text-sm font-semibold hover:bg-gray-100 hover:shadow-lg transition-all transform hover:scale-105"
         >
           <FaCalendarAlt />
           View Full Calendar & Availability
