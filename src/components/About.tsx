@@ -6,7 +6,7 @@ export default function Atl5DLinkTree() {
     <div className="flex flex-col items-start gap-6 lg:gap-8 px-3 lg:px-6 py-4">
       {/* Header Avatar + Branding */}
       <div className="flex flex-row items-center gap-4">
-        <Avatar src="/favicon.svg" alt="profile-picture">
+        <Avatar src="/favicon.svg" alt="atl5d-logo">
           <Lucide.IconUser className="size-2/3" />
         </Avatar>
 
@@ -23,41 +23,55 @@ export default function Atl5DLinkTree() {
         <p>
           <strong>👋 Welcome to ATL5D</strong>
           <br />
-          We designed a new blueprint uniting Atlanta businesses & creators — replacing competition
-          with purpose-driven collaboration. Subscribe on Discord for livestream bookings, branded
-          TikTok ReelView/podcast AR effects + TikTok/Instagram promotion.
+          ATL5D is the trusted growth network for Atlanta businesses and creators.
+          We connect services, content, and tribe — helping partners earn more,
+          build visibility starting in the Camp Creek Market. Join our network on
+          Discord to access livestream bookings, branded TikTok ReelView, branded 
+          TikTok podcasts, and premium social media boosts.
         </p>
 
-        {/* Value of Subscribing - NEW SECTION */}
+        {/* Value of Subscribing */}
         <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg border border-purple-200 mt-4">
           <p className="font-semibold text-lg mb-3">🚀 Why Subscribe to Camp Creek Market?</p>
 
           <div className="space-y-2 text-sm">
             <div className="flex items-start gap-3">
               <span>🗓️</span>
-              <span><strong>Bookings:</strong> Turn your service booking into a livestream reality show.</span>
+              <span>
+                <strong>Bookings:</strong> Transform your service bookings into
+                premium livestream moments that drive awareness and revenue.
+              </span>
             </div>
 
             <div className="flex items-start gap-3">
               <span>🎙️</span>
-              <span><strong>Podcast:</strong> Use our @CampCreekMarket TikTok Podcast open mic to promote your services.</span>
+              <span>
+                <strong>Podcast:</strong> Share your story on the @CampCreekMarket TikTok
+                Podcast open mic — reach customers across the Atlanta community.
+              </span>
             </div>
 
             <div className="flex items-start gap-3">
               <span>🎥</span>
-              <span><strong>ReelView:</strong> Ask your customers to leave a TikTok reel review we all can see.</span>
+              <span>
+                <strong>ReelView:</strong> Invite customers to leave TikTok reel reviews —
+                creating authentic, shareable social proof for your business.
+              </span>
             </div>
 
             <div className="flex items-start gap-3">
               <span>🟠</span>
-              <span><strong>Livestream Business:</strong> Watch Camp Creek Market livestreams.</span>
+              <span>
+                <strong>Livestream Business:</strong> Get featured in real-time Camp Creek
+                Market livestream coverage and community spotlights.
+              </span>
             </div>
           </div>
         </div>
 
         {/* Service Categories */}
         <div className="mt-4">
-          <p className="text-lg font-semibold mb-3">🎯 Services:</p>
+          <p className="text-lg font-semibold mb-3">🎯 Services</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-gray-50 border border-gray-300 rounded-lg p-4 shadow-sm">
@@ -66,7 +80,8 @@ export default function Atl5DLinkTree() {
                 <span className="font-semibold text-gray-800">Verified</span>
               </div>
               <p className="text-sm text-gray-700">
-                Verify your purpose and we verify your service.
+                Earn verified status. We validate your business, your purpose, and your service —
+                giving customers confidence and strengthening trust in the Camp Creek economy.
               </p>
             </div>
 
@@ -76,17 +91,16 @@ export default function Atl5DLinkTree() {
                 <span className="font-semibold text-gray-800">Marketing</span>
               </div>
               <p className="text-sm text-gray-700">
-                Hyper-local Camp Creek Atlanta exit marketing.
+                Purpose-driven, hyper-local marketing designed for measurable growth in the Camp Creek
+                Atlanta corridor — built around community, storytelling, and results.
               </p>
             </div>
           </div>
         </div>
 
-        {/* (rest of your sections unchanged) */}
-
         {/* CTA for Immediate Action */}
         <div className="text-center mt-4">
-          <p className="text-sm text-gray-600 mb-2">Join the Discord</p>
+          <p className="text-sm text-gray-600 mb-2">Join the ATL5D Network</p>
 
           <Button
             as="a"
@@ -94,7 +108,7 @@ export default function Atl5DLinkTree() {
             target="_blank"
             className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold"
           >
-            <span className="flex items-center gap-2">💫 Discord</span>
+            <span className="flex items-center gap-2">💫 Join on Discord</span>
           </Button>
         </div>
       </div>
@@ -103,7 +117,7 @@ export default function Atl5DLinkTree() {
       <div className="flex flex-col sm:flex-row gap-4 self-stretch justify-between items-center mt-6 p-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg text-white">
         <div className="text-center sm:text-left">
           <p className="font-semibold">Ready to verify your Camp Creek Market business?</p>
-          <p className="text-sm opacity-90">Subscribe today</p>
+          <p className="text-sm opacity-90">Become a subscribed network partner today.</p>
         </div>
 
         <Button
@@ -125,7 +139,9 @@ export default function Atl5DLinkTree() {
           target="_blank"
           className="border-purple-300 text-purple-600 hover:bg-purple-50 transition-colors"
         >
-          <span className="flex items-center gap-2">🧙🏼‍♂️ Contact Wizard on Telegram</span>
+          <span className="flex items-center gap-2">
+            🧙🏼‍♂️ Contact Wizard — Concierge Onboarding
+          </span>
         </Button>
       </div>
     </div>
