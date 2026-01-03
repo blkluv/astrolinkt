@@ -106,40 +106,28 @@ const Projects = () => {
           url: "https://5dtok.com"
         },
         {
-          name: "5DTOK SHOP",
+          name: "ATL5D SHOP",
           handle: "Earn Bitcoin for selling products",
           followers: "Bitcoin Shopify",
-          url: "https://shop.5dtok.com"
+          url: "https://shop.atl5d.com"
         },
         {
-          name: "5DTOK ZSTREAM",
+          name: "ATL5D ZSTREAM",
           handle: "Earn Bitcoin livestreaming",
           followers: "Bitcoin Twitch",
-          url: "https://zstream.5dtok.com"
+          url: "https://zstream.atl5d.com"
         },
         {
-          name: "5DTOK EVENTS",
-          handle: "Earn Bitcoin throwing events",
-          followers: "Bitcoin Eventbrite",
-          url: "https://events.5dtok.com"
-        },
-        {
-          name: "5DTOK MUSIK",
-          handle: "Earn Bitcoin streaming music",
-          followers: "Bitcoin Spotify",
-          url: "https://musik.5dtok.com"
-        },
-        {
-          name: "5DTOK MIC",
+          name: "ATL5D MIC",
           handle: "Earn Bitcoin for reviews",
           followers: "Bitcoin Google Reviews",
           url: "https://mic.5dtok.com"
         },
         {
-          name: "Pollerama.hahz.live",
-          handle: "Social media for polls",
+          name: "ATL5D POLLS",
+          handle: "Atlanta polls",
           followers: "Polling Platform",
-          url: "https://pollerama.hahz.live"
+          url: "https://poll.atl5d.com"
         }
       ]
     },
