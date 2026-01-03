@@ -11,8 +11,8 @@ export default () => {
         </Avatar>
 
         <div className="flex flex-col items-start gap-1">
-          <h1 className="font-medium text-lg lg:text-3xl">🅰️ ATL5D</h1>
-          <h2 className="font-medium text-2xl lg:text-xl">🌴 ATL LINK-TREE 🔗</h2>
+          <h1 className="font-medium text-lg lg:text-3xl">🍑TREE</h1>
+          <h2 className="font-medium text-2xl lg:text-xl">🗓️ Bookings</h2>
         </div>
       </div>
 
@@ -20,10 +20,8 @@ export default () => {
       <div className="flex flex-col gap-4 text-lg">
         <p className="text-xl font-semibold">✨ UNITED</p>
         <p>
-           <strong>👋 Welcome All Rd</strong> BLKLUV.ORG designed a new blueprint uniting 
-           Atlanta businesses & creators — replacing profit competition with purpose-driven
-           collaboration using advanced tech. Subscribe on Discord for ReelView/podcast features
-           + TikTok/Instagram promotion.
+          Promote your Atlanta services on ATL5D 🍑TREE. We promote our Tribe across
+          our social channels, and businesses only pay for verified leads or bookings.
         </p>
 
         {/* Value of Subscribing - NEW SECTION */}
